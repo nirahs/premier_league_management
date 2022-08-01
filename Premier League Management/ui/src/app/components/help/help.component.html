@@ -1,0 +1,28 @@
+<div id="help-container">
+    <h2 class="help-main-head">Guide For Console</h2>
+    <div id="help-sub-container" *ngFor="let consHelp of consHelps">
+        <div class="heading-container">
+            <h4 class="help-sub-head">{{consHelp.heading}}</h4>
+        </div>
+        <div class="image-container">
+            <img [src]="consHelp.img" alt="Welcome msg in console" >
+        </div>
+        <div class="help-msg-container">
+            <p>{{consHelp.paragraph}}</p>
+        </div>
+    </div>
+
+    <h2 class="help-main-head">Guide For GUI</h2>
+    <div id="help-sub-container" *ngFor="let help of guiHelps">
+        <div class="heading-container">
+            <h4 class="help-sub-head">{{help.heading}}</h4>
+        </div>
+        <div class="image-container">
+            <img [src]="help.img" alt="Welcome msg in console" >
+        </div>
+        <div class="help-msg-container">
+            <p>{{help.paragraph}}</p>
+        </div>
+    </div>
+
+</div>

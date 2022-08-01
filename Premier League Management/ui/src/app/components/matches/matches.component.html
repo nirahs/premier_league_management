@@ -1,0 +1,51 @@
+<div id="match-section" >
+    <div id="match-table">
+        <table>
+            <tr>
+                <th>Club-1 Name</th>
+                <th>Club-2 Name</th>
+                <th>Club-1 Score</th>
+                <th>Club-2 Score</th>
+                <th>Match Date</th>
+            </tr>
+            <tr *ngFor="let match of matches">
+                <td>{{match.club1.clubName}}</td>
+                <td>{{match.club2.clubName}}</td>
+                <td>{{match.club1Score}}</td>
+                <td>{{match.club2Score}}</td>
+                <td>{{match.matchDate.year}}-{{match.matchDate.monthValue<10?("0"+match.matchDate.monthValue):match.matchDate.monthValue}}-{{match.matchDate.dayOfMonth<10?("0"+match.matchDate.dayOfMonth):match.matchDate.dayOfMonth}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="match-inputs">
+        <div class="input-section">
+            <button (click)="onClickCreateRandomMatch()" class="btn">Create random match</button>
+            <h6>Create random match and add it to the matches list</h6>
+        </div>
+        <div class="input-section">
+            <form #dateForm="ngForm" ngSubmit="onSubmit(dateForm)">
+                <label>Date:</label>
+                <input type="text"
+                name="date"
+                placeholder="yyyy/mm/dd"
+                [(ngModel)]="date"
+                #dateMatch="ngModel"
+                required
+                minlength="10"
+                pattern= "^([0-9]{4}[-/]?((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))|([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00)[-/]?02[-/]?29)$"
+                [ngClass]="{'is-invalid':dateMatch.errors}">
+                <div class="invalid-feedback" [hidden]="!dateMatch.errors?.pattern">
+                    Invalid date
+                </div>
+                <div class="invalid-feedback" [hidden]="!invalid">
+                    Unavailable match
+                </div>
+            </form>
+            <button class="btn" [disabled]="dateForm.form.invalid" (click)="onClickGetMatchesAtSpecificDate()">Get Mathces</button>
+        </div>
+        <div class="input-section">
+            <button (click)="onClickGetMatchesSortedByDate()" class="btn">Get match sorted by date</button>
+            <h6>Sort matches by date</h6>
+        </div>
+    </div>
+</div>

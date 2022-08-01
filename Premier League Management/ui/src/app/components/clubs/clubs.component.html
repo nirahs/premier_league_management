@@ -1,0 +1,37 @@
+<div id="club-section">
+    <div id="club-table">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Win</th>
+                <th>Draw</th>
+                <th>Defeat</th>
+                <th>Goal Received</th>
+                <th>Goal Scored</th>
+                <th>Point</th>
+                <th>Played Match</th>
+            </tr>
+            <tr *ngFor="let club of clubs">
+                <td>{{club.clubName}}</td>
+                <td>{{club.numberOfWin}}</td>
+                <td>{{club.numberOfDraw}}</td>
+                <td>{{club.numberOfDefeat}}</td>
+                <td>{{club.numberOfGoalReceived}}</td>
+                <td>{{club.numberOfGoalScored}}</td>
+                <td>{{club.numberOfPoint}}</td>
+                <td>{{club.numberOfPlayedMatch}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="club-inputs">
+        <div class="input-section">
+            <button (click)="onClickSortByWins()" class="btn">Sort by wins</button>
+            <h6>Sort by number of wins per club</h6>
+        </div>
+        <div class="input-section">    
+            <button (click)="onClickSortByGoals()" class="btn">Sort by goals</button>
+            <h6>Sort by number of scored goals per club</h6>
+        </div>
+        
+    </div>
+</div>

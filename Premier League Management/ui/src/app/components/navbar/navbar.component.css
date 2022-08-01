@@ -1,0 +1,37 @@
+#nav-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:#333;
+    color:#f4f4f2;
+    min-width:100%;
+    transition:5s;
+    height:40px;
+}
+#nav-bar #logo a svg{
+    color: #f4f4f2;
+    margin:0 0 0 50px; 
+    height: 28px; 
+    transition: 2s;
+}
+#nav-bar #logo a svg:hover{
+    transform:rotate(90deg);
+}
+#nav-bar ul{
+    display:flex;
+}
+#nav-bar ul li{
+    list-style-type: none;
+    padding:15px;
+    margin:15px;
+}
+#nav-bar ul li a{
+    text-decoration: none;
+    color:#f4f4f2;
+    padding:5px;
+}
+#nav-bar ul li a:hover{
+    border-bottom: 2px solid #f4f4f2;
+    border-top: 2px solid #f4f4f2;
+}
+

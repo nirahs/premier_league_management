@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                                                  controllers.LeagueController.index(request :Request)
+GET     /clubsPoints                                            controllers.LeagueController.clubListSortedByPointsAndGoalScored()
+GET     /clubsWins                                              controllers.LeagueController.clubListSortedByNoOfWins()
+GET     /clubsGoals                                             controllers.LeagueController.clubListSortedByNoOfGoalScored()
+GET     /randomMatch                                            controllers.LeagueController.createRandomMatch()
+GET     /matches                                                controllers.LeagueController.matchList()
+GET     /matches/*date                                          controllers.LeagueController.matchesInSpecificDate(date:String)
+GET     /matchesDate                                            controllers.LeagueController.matchListSortedByDate()
+
